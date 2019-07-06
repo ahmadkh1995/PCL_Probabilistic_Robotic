@@ -46,10 +46,7 @@ Installing PCL:
      $ cmake -DCMAKE_BUILD_TYPE=Release ..
      $ make -j2
      $ sudo make -j2 install
-     $ cd pcl-pcl-1.7.2 && mkdir build && cd build
-     $ cmake -DCMAKE_BUILD_TYPE=Release ..
-     $ make -j2
-     $ sudo make -j2 install
+     
      
  For using PCl we need some other Libraries to install as dependency :
  
@@ -84,4 +81,14 @@ Installation:
  - Tool configuration, e.g. choosing command-line options or IDE build settings.
  - Identifying the library binary, among all the build variants, whose compile configuration is compatible with the rest of your project.
 
+### VTK Library
+
+Installation:
+
+    $ cd VTK-8.1.0
+    $ mkdir build
+    $ cd build
+    $ cmake -DCMAKE_BUILD_TYPE=Release ..
+    $ make -j2
+    $ sudo make -j2 install
  
