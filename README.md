@@ -68,7 +68,14 @@ Installing PCL:
  
  - [VTK](https://vtk.org/) -> The Visualization Toolkit (VTK) is open source software for manipulating and displaying scientific data.
  
- 
- 
+### BOOST Library
+Download the source from [here](https://www.boost.org/users/download/).
+Installation:
+
+                       $ tar --bzip2 -xf /path/to/boost_1_70_0.tar.gz
+		       $ cd path/to/boost_1_70_0
+		       $ ./bootstrap.sh --help
+		       
+             
  
  
