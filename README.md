@@ -46,3 +46,18 @@ Installing PCL:
      $ cmake -DCMAKE_BUILD_TYPE=Release ..
      $ make -j2
      $ sudo make -j2 install
+     
+ For using PCl we need some other Libraries to install as dependency :
+ 
+ - Boost -> is a set of libraries that provide support for tasks and structures  such as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions, and unit testing.
+ 
+ - Eigen -> is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
+ 
+ - FLANN -> is a library for performing fast approximate nearest neighbor searches in high dimensional spaces.
+ 
+ - VTK -> The Visualization Toolkit (VTK) is open source software for manipulating and displaying scientific data.
+ 
+ 
+ 
+ 
+ 
