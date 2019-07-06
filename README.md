@@ -72,9 +72,12 @@ Installing PCL:
 Download the source from [here](https://www.boost.org/users/download/).
 Installation:
 
-                       $ tar --bzip2 -xf /path/to/boost_1_70_0.tar.gz
+                       $ tar xvzf /path/to/boost_1_70_0.tar.gz -C /path/to/somedirectory  // Extract file in specific Directory
 		       $ cd path/to/boost_1_70_0
 		       $ ./bootstrap.sh --help
+		       $ ./bootstrap.sh --prefix=path/to/installation/prefix   // Install in specific directory
+		       $ ./bootstrap.sh   // Install in current 
+		       $ ./b2     //build Everything
 		       
              
  
