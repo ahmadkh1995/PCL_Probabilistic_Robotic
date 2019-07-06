@@ -40,12 +40,11 @@ In this project I use version 1.9.1 .
 Installing PCL:
 
      $ tar xvfj pcl-pcl-1.9.1.tar.gz
-     $ cd pcl-pcl-1.7.2 && mkdir build && cd build
+     $ cd pcl-pcl-1.9.1 
+     $ mkdir build && cd build
      $ cmake ..
-     $ ccmake ..
      $ cmake -DCMAKE_BUILD_TYPE=Release ..
      $ make -j2
-     $ make -j2 install
      $ sudo make -j2 install
      $ cd pcl-pcl-1.7.2 && mkdir build && cd build
      $ cmake -DCMAKE_BUILD_TYPE=Release ..
