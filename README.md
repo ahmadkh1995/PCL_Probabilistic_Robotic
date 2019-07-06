@@ -28,7 +28,7 @@ Position of the object in the scene
 PCL Library , 
 
 ### PCL Library:
-Download the desired stable vaersion of PCL source from [here](https://github.com/PointCloudLibrary/pcl/releases) .
+Download the desired stable version of PCL source from [here](https://github.com/PointCloudLibrary/pcl/releases) .
 
 In this project I use version 1.9.1 .
 
@@ -48,6 +48,12 @@ Installing PCL:
      $ sudo make -j2 install
      
  For using PCl we need some other Libraries to install as dependency :
+ 
+  <p align="center">
+  <img width="150" height="70"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/Boost.jpeg">
+  <img width="100" height="75" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/Eigen.png">
+  <img width="100" height="100" style="margin-left=20px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/VTK.png">
+</p>
  
  - Boost -> is a set of libraries that provide support for tasks and structures  such as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions, and unit testing.
  
