@@ -90,8 +90,8 @@ Installation:
     $ mkdir build
     $ cd build
     $ cmake -DCMAKE_BUILD_TYPE=Release ..
-    $ make -j2
-    $ sudo make -j2 install
+    $ make 
+    $ sudo make install
  
 
 ### Eigen Library
@@ -100,7 +100,15 @@ In fact, the header files in the Eigen subdirectory are the only files required 
 
 ### FLANN Library
 Download the source from [here](https://www.cs.ubc.ca/research/flann/).
-
+First extract(Unzip) flann-1.8.4-src.zip file .
+Installation , we can also use this [pdf Guide](https://www.cs.ubc.ca/research/flann/uploads/FLANN/flann_manual-1.8.4.pdf):
+           
+     $ cd flann-1.8.4-src
+     $ mkdir build
+     $ cd build
+     $ cmake -DCMAKE_BUILD_TYPE=Release ..
+     $ make
+     $ sudo make install
 
 
 ### My project
