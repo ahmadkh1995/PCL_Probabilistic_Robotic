@@ -1,6 +1,13 @@
-## Probabilistic Robotic project
 
 Project Title: Find that object
+Goal: find the transformation that aligns the globe on the scene
+
+  <p align="center">
+  <img width="300" height="250"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Globe%20in%20Scene.png">
+  <img width="300" height="250" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Globe.png">
+  
+</p>
+
 
 ### Description: 
 We have 2 point clouds acquired with a very accurate depth sensor.
@@ -8,10 +15,6 @@ We have 2 point clouds acquired with a very accurate depth sensor.
 The point cloud: globe-in-scene.txt contains all 3D points of a scene that contains our object.
 
 The point cloud: globe.txt contains only the 3D points of the object we want to find (in a different coordinate frame!).
-
-We want to find the transformation that aligns the globe on the scene.
-Make sure to visualize both of the point clouds before starting
-and optionally try to perform the alignment manually.
 
 The dataset consists of two txt files:
 
@@ -75,11 +78,6 @@ Installation:
     $ ./bootstrap.sh              // or Install in current directory
     $ ./b2                 // Build Everything
 		       
- - Linking :
- 
- There are two main challenges associated with linking:    
- - Tool configuration, e.g. choosing command-line options or IDE build settings.
- - Identifying the library binary, among all the build variants, whose compile configuration is compatible with the rest of your project.
 
 ### VTK Library
 Download the source from [here](https://vtk.org/download/).
@@ -113,8 +111,11 @@ Installation we can also use this [pdf Guide](https://www.cs.ubc.ca/research/fla
 
 
 ### My project
-I developed this project in QT IDE and use CMake .
-
+ - Linking :
+ There are two main challenges associated with linking:    
+ - Tool configuration, e.g. choosing command-line options or IDE build settings.
+ - Identifying the library binary, among all the build variants, whose compile configuration is compatible with the rest of your project.
+I use CMake to compile and build this project.
 Inside the folder [PCL_Robotic](https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/tree/master/PCL_Robotic)
 for connecting the .cpp file to PCL library we should create a CMakeLists.txt and add these lines to it:
 
@@ -130,4 +131,30 @@ for connecting the .cpp file to PCL library we should create a CMakeLists.txt an
       add_executable(${PROJECT_NAME} "main.cpp")    // add executable "PROJECT_NAME"
       target_link_libraries(${PROJECT_NAME} Qt5::Core)
       target_link_libraries (${PROJECT_NAME} ${PCL_LIBRARIES})    //target link libraries to this project "PROJECT_NAME"
+      
+then we should create a new folder inside the project folder named "build" :
+
+      $ mkdir build
+      $ cd build
+      $ cmake -DCMAKE_BUILD_TYPE=Release ..
+      $ make
+      
+ Now we should create PCD files out of give .txt files , so after changing the .txt type to .pcd we should add these header lines to help PCL recognize the pcd files:
+ 
+     # .PCD v.6 - Point Cloud Data file format
+     
+     VERSION .6
+     FIELDS x y z      #in this txt we only have x ,y,z coordinates
+     SIZE 4 4 4 
+     TYPE F F F 
+     COUNT 1 1 1
+     WIDTH 17551
+     HEIGHT 1
+     VIEWPOINT 0 0 0 1 0 0 0
+     POINTS 17551         #number of points
+     DATA ascii
+     
+ for run the project (inside the build folder):
+ 
+      $ ./PCL_Robotic
 
