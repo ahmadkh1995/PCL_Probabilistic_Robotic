@@ -93,3 +93,27 @@ Installation:
     $ make -j2
     $ sudo make -j2 install
  
+
+### Eigen Library
+
+
+
+### My project
+I developed this project in QT IDE and use CMake .
+
+Inside the folder [PCL_Robotic](https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/tree/master/PCL_Robotic)
+for connecting the .cpp file to PCL library we should create a CMakeLists.txt and add these lines to it:
+
+      cmake_minimum_required(VERSION 3.0.0)
+      project(PCL_Robotic VERSION 0.1 LANGUAGES CXX)
+      set(CMAKE_INCLUDE_CURRENT_DIR ON)
+      set(CMAKE_AUTOMOC ON)
+      find_package(Qt5Core)
+      find_package(PCL 1.2 REQUIRED)
+      include_directories(${PCL_INCLUDE_DIRS})
+      link_directories(${PCL_LIBRARY_DIRS})
+      add_definitions(${PCL_DEFINITIONS})
+      add_executable(${PROJECT_NAME} "main.cpp")
+      target_link_libraries(${PROJECT_NAME} Qt5::Core)
+      target_link_libraries (${PROJECT_NAME} ${PCL_LIBRARIES})
+
