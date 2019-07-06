@@ -82,10 +82,11 @@ Installation:
  - Identifying the library binary, among all the build variants, whose compile configuration is compatible with the rest of your project.
 
 ### VTK Library
-
+Download the source from [here](https://vtk.org/download/).
 Installation:
 
-    $ cd VTK-8.1.0
+    $ tar xvzf /path/to/VTK-8.2.0.tar.gz -C /path/to/somedirectory      // Extract file in specific Directory
+    $ cd VTK-8.2.0
     $ mkdir build
     $ cd build
     $ cmake -DCMAKE_BUILD_TYPE=Release ..
