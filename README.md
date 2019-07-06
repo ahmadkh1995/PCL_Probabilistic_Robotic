@@ -28,8 +28,10 @@ Position of the object in the scene
 PCL Library , 
 
 ### PCL Library:
-Download the desired stable vaersion of PCL source from [here](https://github.com/PointCloudLibrary/pcl/releases)
-here we use version 1.9.1
+Download the desired stable vaersion of PCL source from [here](https://github.com/PointCloudLibrary/pcl/releases) .
+
+In this project I use version 1.9.1 .
+
 Installing PCL:
 
      $ tar xvfj pcl-pcl-1.9.1.tar.gz
