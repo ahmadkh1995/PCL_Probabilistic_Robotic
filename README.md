@@ -95,7 +95,12 @@ Installation:
  
 
 ### Eigen Library
-In order to use Eigen,we just need to download and extract Eigen's source code from [here](http://eigen.tuxfamily.org/index.php?title=Main_Page#Download). In fact, the header files in the Eigen subdirectory are the only files required to compile programs using Eigen. The header files are the same for all platforms. It is not necessary to use CMake or install anything.
+In order to use Eigen,we just need to download and extract Eigen's source code from [here](http://eigen.tuxfamily.org/index.php?title=Main_Page#Download). 
+In fact, the header files in the Eigen subdirectory are the only files required to compile programs using Eigen. The header files are the same for all platforms. It is not necessary to use CMake or install anything.
+
+### FLANN Library
+Download the source from [here](https://www.cs.ubc.ca/research/flann/).
+
 
 
 ### My project
