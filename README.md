@@ -1,4 +1,4 @@
-## Probabilistic Robotic course project
+## Probabilistic Robotic project
 
 Project Title: Find that object
 
@@ -79,6 +79,10 @@ Installation:
     $ ./bootstrap.sh              // or Install in current directory
     $ ./b2                 // Build Everything
 		       
-             
+ - Linking :
  
+ There are two main challenges associated with linking:    
+ - Tool configuration, e.g. choosing command-line options or IDE build settings.
+ - Identifying the library binary, among all the build variants, whose compile configuration is compatible with the rest of your project.
+
  
