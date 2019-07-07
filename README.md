@@ -162,3 +162,26 @@ then we should create a new folder inside the project folder named "build" :
  
       $ ./PCL_Robotic
 
+
+I use ICP to find the transformation between two clouds.
+
+### Iterative closest point (ICP):
+(Source : WikiPedia)
+- is an algorithm employed to minimize the difference between two clouds of points. ICP is often used to reconstruct 2D or 3D surfaces from different scans, to localize robots and achieve optimal path planning (especially when wheel odometry is unreliable due to slippery terrain), to co-register bone models, etc. 
+
+Inputs: reference and source point clouds, initial estimation of the transformation to align the source to the reference (optional), criteria for stopping the iterations.
+
+Output: refined transformation.
+
+Essentially, the algorithm steps are:
+
+- For each point (from the whole set of vertices usually referred to as dense or a selection 
+    of pairs of vertices from each  model) in the source point cloud, Match the closest point 
+    in the reference point cloud (or a selected set).
+- Estimate the combination of rotation and translation using a root mean square point to point
+    distance metric minimization technique which will best align each source point to its match 
+    found in the previous step. This step may also involve weighting points and rejecting outliers 
+    prior to alignment.
+- Transform the source points using the obtained transformation.
+- Iterate (re-associate the points, and so on).
+
