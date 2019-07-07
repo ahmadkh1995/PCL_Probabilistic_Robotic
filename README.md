@@ -113,13 +113,15 @@ Installation we can also use this [pdf Guide](https://www.cs.ubc.ca/research/fla
 
 
 ### My project
- - Linking :
+  Linking :
  There are two main challenges associated with linking:    
  - Tool configuration, e.g. choosing command-line options or IDE build settings.
  - Identifying the library binary, among all the build variants, whose compile configuration is compatible with the rest of your project.
+ 
 I use CMake to compile and build this project.
 Inside the folder [PCL_Robotic](https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/tree/master/PCL_Robotic)
 for connecting the .cpp file to PCL library we should create a CMakeLists.txt and add these lines to it:
+
 
       cmake_minimum_required(VERSION 3.0.0)
       project(PCL_Robotic VERSION 0.1 LANGUAGES CXX)
