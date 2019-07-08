@@ -1,7 +1,7 @@
 
-Project Title: Find that object
+ Project Title: **Find that object**
 
-Goal: find the transformation that aligns the globe on the scene
+Goal: **Find the transformation that aligns the globe on the scene**
 
 
   <p align="center">
@@ -11,7 +11,7 @@ Goal: find the transformation that aligns the globe on the scene
 </p>
 
 
-### Description: 
+**Description:**
 We have 2 point clouds acquired with a very accurate depth sensor.
 
 The point cloud: globe-in-scene.txt contains all 3D points of a scene that contains our object.
@@ -24,7 +24,7 @@ The dataset consists of two txt files:
   
 	globe-in-scene.txt contains the [x y z] 3D points of a scene containing the globe object.
   
-Expected output:
+**Epected output:**
 
 Position of the object in the scene
 
@@ -38,7 +38,7 @@ PCL Library ,
   
 </p>
  
-Download the desired stable version of PCL source from [here](https://github.com/PointCloudLibrary/pcl/releases) .
+Download the stable release of PCL Library from [here](https://github.com/PointCloudLibrary/pcl/releases) .
 
 In this project I use version 1.9.1 .
 
@@ -56,9 +56,9 @@ Installing PCL:
  For using PCl we need some other Libraries to install as dependency :
  
   <p align="center">
-  <img width="150" height="70"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/Boost.jpeg">
-  <img width="100" height="75" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/Eigen.png">
-  <img width="100" height="100" style="margin-left=20px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/VTK.png">
+  <img width="190" height="100"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/Boost.jpeg">
+  <img width="90" height="90" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/Eigen.png">
+  <img width="120" height="110" style="margin-left=20px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Tools_Logo/VTK.png">
 </p>
  
  - [Boost](https://www.boost.org/) -> is a set of libraries that provide support for tasks and structures  such as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions, and unit testing.
@@ -167,11 +167,11 @@ I use ICP to find the transformation between two clouds.
 
 ### Iterative closest point (ICP):
 (Source : WikiPedia)
-- is an algorithm employed to minimize the difference between two clouds of points. ICP is often used to reconstruct 2D or 3D surfaces from different scans, to localize robots and achieve optimal path planning (especially when wheel odometry is unreliable due to slippery terrain), to co-register bone models, etc. 
+- ICP is an algorithm employed to minimize the difference between two clouds of points. ICP is often used to reconstruct 2D or 3D surfaces from different scans, to localize robots and achieve optimal path planning (especially when wheel odometry is unreliable due to slippery terrain), to co-register bone models, etc. 
 
-Inputs: reference and source point clouds, initial estimation of the transformation to align the source to the reference (optional), criteria for stopping the iterations.
+**Inputs:** reference and source point clouds, initial estimation of the transformation to align the source to the reference (optional), criteria for stopping the iterations.
 
-Output: refined transformation.
+**Output:** refined transformation.
 
 Essentially, the algorithm steps are:
 
