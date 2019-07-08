@@ -50,7 +50,6 @@ pcl::io::loadPCDFile ("transform_pcd.pcd", *Final1);
     pcl::visualization::CloudViewer viewer1("Transformed");
   viewer1.showCloud(Final1);  //blocks until the cloud is actually rendered
 
-  //This will only get called once
 
     //This will get called once per visualization iteration
    
