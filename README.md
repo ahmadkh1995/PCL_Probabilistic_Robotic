@@ -165,7 +165,7 @@ then we should create a new folder inside the project folder named "build" :
 I use ICP to find the transformation between two clouds.
 
 ### Iterative closest point (ICP):
-(Source : WikiPedia)
+
 - ICP is an algorithm employed to minimize the difference between two clouds of points. ICP is often used to reconstruct 2D or 3D surfaces from different scans, to localize robots and achieve optimal path planning (especially when wheel odometry is unreliable due to slippery terrain), to co-register bone models, etc. 
 
 **Inputs:** reference and source point clouds, initial estimation of the transformation to align the source to the reference (optional), criteria for stopping the iterations.
@@ -182,5 +182,24 @@ Essentially, the algorithm steps are:
     found in the previous step. This step may also involve weighting points and rejecting outliers 
     prior to alignment.
 - Transform the source points using the obtained transformation.
-- Iterate (re-associate the points, and so on).
+- Iterate (re-associate the points, and so on).**(Source : WikiPedia)**
+
+
+### Run the code
+
+The Transformation matrix tells us the position and orientation of the object we aligned to in the target cloud.
+If the two PointClouds align correctly (meaning they are both the same cloud merely with some kind of rigid transformation applied to one of them) then icp.hasConverged() = 1 (true). It then outputs the fitness score of the final transformation and some information about it.
+
+<p align="center">
+  <img width="150" height="120"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/T_matrix.png">
+ <img width="300" height="200"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Result_matrix.png">
+
+</p>
+
+<p align="center">
+  <img width="250" height="200"  src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Transformed.png">
+  <img width="250" height="200" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Transform2.png">
+	<img width="220" height="200" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Transform_3.png">
+</p>
+
 
