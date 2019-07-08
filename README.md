@@ -202,4 +202,4 @@ If the two PointClouds align correctly (meaning they are both the same cloud mer
 	<img width="220" height="200" style="margin-left=10px;" src="https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic/blob/master/Transform_3.png">
 </p>
 
-
+Now if you check the build folder you can see that resulted (transformed) PCD file has been created.("transform_pcd.pcd")
