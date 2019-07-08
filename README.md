@@ -24,12 +24,11 @@ The dataset consists of two txt files:
   
 	globe-in-scene.txt contains the [x y z] 3D points of a scene containing the globe object.
   
-**Epected output:**
-
-Position of the object in the scene
+**Expected output:** Position of the object in the scene
 
 
 ### Prequirements: 
+
 PCL Library , 
 
 ### PCL Library:
