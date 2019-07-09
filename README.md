@@ -203,3 +203,55 @@ If the two PointClouds align correctly (meaning they are both the same cloud mer
 </p>
 
 Now if you check the build folder you can see that resulted (transformed) PCD file has been created.("transform_pcd.pcd")
+
+### Code:
+
+Creates two pcl::PointCloud<pcl::PointXYZ> boost shared pointers and initializes them. The type of each point is set to PointXYZ in the pcl namespace :
+
+          pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_in (new pcl::PointCloud<pcl::PointXYZ>);
+          pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out (new pcl::PointCloud<pcl::PointXYZ>);
+
+Load PCD file of clouds :
+
+          pcl::io::loadPCDFile ("globe.pcd", *cloud_in);
+          pcl::io::loadPCDFile ("globe_in_scene.pcd", *cloud_out);
+
+Transform the cloud :
+
+          std::cout << "size:" << cloud_out->points.size() << std::endl;
+          for (size_t i = 0; i < cloud_in->points.size (); ++i)
+          cloud_out->points[i].x = cloud_in->points[i].x + 0.7f;
+          std::cout << "Transformed " << cloud_in->points.size () << " data points:"
+          << std::endl;
+	  
+	  
+    for (size_t i = 0; i < cloud_out->points.size (); ++i)
+    std::cout << "    " << cloud_out->points[i].x << " " <<
+    cloud_out->points[i].y << " " << cloud_out->points[i].z << std::endl;
+	
+Creates an instance of an IterativeClosestPoint and gives it some useful information. “icp.setInputSource(cloud_in);” sets cloud_in as the PointCloud to begin from and “icp.setInputTarget(cloud_out);” sets cloud_out as the PointCloud which we want cloud_in to look like.
+
+    pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
+    icp.setInputSource(cloud_in);
+    icp.setInputTarget(cloud_out);
+	  
+Creates a pcl::PointCloud<pcl::PointXYZ> to which the IterativeClosestPoint can save the resultant cloud after applying the algorithm. If the two PointClouds align correctly (meaning they are both the same cloud merely with some kind of rigid transformation applied to one of them) then icp.hasConverged() = 1 (true). It then outputs the fitness score of the final transformation and some information about it:
+
+    pcl::PointCloud<pcl::PointXYZ> Final;
+    icp.align(Final);
+    std::cout << "\nhas converged(status):" << icp.hasConverged() << " \nscore: " <<
+    icp.getFitnessScore() << std::endl;
+    std::cout<<"Transformation Matrix:"<<endl;
+    std::cout << icp.getFinalTransformation() << std::endl;
+
+Save the Transformed cloud to a new PCD file :
+
+    pcl::io::savePCDFileASCII ("transform_pcd.pcd", Final);
+    std::cerr << "Saved " << Final.points.size () << " data points to transform_pcd.pcd." << std::endl;
+    
+Define a new variable for loading and visualization of the result cloud :
+
+    pcl::PointCloud<pcl::PointXYZ>::Ptr Final1 (new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::io::loadPCDFile ("transform_pcd.pcd", *Final1);
+    pcl::visualization::CloudViewer viewer1("Transformed");
+    viewer1.showCloud(Final1);  //blocks until the cloud is actually rendered
