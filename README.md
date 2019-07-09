@@ -208,21 +208,21 @@ Now if you check the build folder you can see that resulted (transformed) PCD fi
 
 Creates two pcl::PointCloud<pcl::PointXYZ> boost shared pointers and initializes them. The type of each point is set to PointXYZ in the pcl namespace :
 
-          pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_in (new pcl::PointCloud<pcl::PointXYZ>);
-          pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out (new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_in (new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out (new pcl::PointCloud<pcl::PointXYZ>);
 
 Load PCD file of clouds :
 
-          pcl::io::loadPCDFile ("globe.pcd", *cloud_in);
-          pcl::io::loadPCDFile ("globe_in_scene.pcd", *cloud_out);
+    pcl::io::loadPCDFile ("globe.pcd", *cloud_in);
+    pcl::io::loadPCDFile ("globe_in_scene.pcd", *cloud_out);
 
 Transform the cloud :
 
-          std::cout << "size:" << cloud_out->points.size() << std::endl;
-          for (size_t i = 0; i < cloud_in->points.size (); ++i)
-          cloud_out->points[i].x = cloud_in->points[i].x + 0.7f;
-          std::cout << "Transformed " << cloud_in->points.size () << " data points:"
-          << std::endl;
+    std::cout << "size:" << cloud_out->points.size() << std::endl;
+    for (size_t i = 0; i < cloud_in->points.size (); ++i)
+    cloud_out->points[i].x = cloud_in->points[i].x + 0.7f;
+    std::cout << "Transformed " << cloud_in->points.size () << " data points:"
+    << std::endl;
 	  
 	  
     for (size_t i = 0; i < cloud_out->points.size (); ++i)
