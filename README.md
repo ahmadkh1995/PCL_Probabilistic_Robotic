@@ -43,7 +43,7 @@ In this project I use version 1.9.1 .
 
 Installing PCL:
 
-     $ tar xvfj pcl-pcl-1.9.1.tar.gz
+     $ tar xvzf pcl-pcl-1.9.1.tar.gz
      $ cd pcl-pcl-1.9.1 
      $ mkdir build && cd build
      $ cmake ..
